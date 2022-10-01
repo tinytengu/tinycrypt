@@ -41,9 +41,11 @@ const TextForm = () => {
     reader.readAsArrayBuffer(file);
 
     reader.onload = () => {
-      const content = String.fromCharCode.apply(null, [
-        ...new Uint8Array(reader.result as ArrayBuffer),
-      ]);
+      let content = "";
+
+      new Uint8Array(reader.result as ArrayBuffer).forEach((code) => {
+        content += String.fromCharCode(code);
+      });
 
       try {
         const decrypted = decrypt(content, password, "raw");
