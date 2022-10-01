@@ -28,7 +28,7 @@ const TextForm = () => {
       return;
     }
     try {
-      const decrypted = decrypt(text, password);
+      const decrypted = decrypt(text, password, "utf8");
       setResult(decrypted);
     } catch (error) {
       alert("Unable to decrypt the content");

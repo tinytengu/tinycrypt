@@ -79,7 +79,7 @@ export function decrypt(
     iv: window.atob(iv),
     tag: forge.util.createBuffer(window.atob(tag)),
   });
-  decipher.update(forge.util.createBuffer(window.atob(ciphertext), encoding));
+  decipher.update(forge.util.createBuffer(window.atob(ciphertext), "raw"));
   if (!decipher.finish()) {
     throw Error("Unable to decrypt the content");
   }
