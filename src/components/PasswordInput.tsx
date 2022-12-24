@@ -35,7 +35,7 @@ const PasswordInput: FC<Props> = (props) => {
 
 PasswordInput.defaultProps = {
   show: false,
-  placeholder: "Show password",
+  placeholder: "Secret password",
 };
 
 export default PasswordInput;
